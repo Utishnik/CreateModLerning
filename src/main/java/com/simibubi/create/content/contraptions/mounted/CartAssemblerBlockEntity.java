@@ -114,7 +114,7 @@ public class CartAssemblerBlockEntity extends SmartBlockEntity implements IDispl
 		}
 	}
 
-	protected void assemble(Level world, BlockPos pos, AbstractMinecart cart) {
+	protected void assemble(Level world, BlockPos pos, AbstractMinecart cart) {//сборка штуковины
 		if (!cart.getPassengers()
 			.isEmpty())
 			return;
@@ -160,7 +160,7 @@ public class CartAssemblerBlockEntity extends SmartBlockEntity implements IDispl
 			initialOrientation = Direction.fromYRot(Mth.atan2(diff.z, diff.x) * 180 / Math.PI);
 		}
 
-		OrientedContraptionEntity entity = OrientedContraptionEntity.create(world, contraption, initialOrientation);
+		OrientedContraptionEntity entity = OrientedContraptionEntity.create(world, contraption, initialOrientation);//
 		if (couplingFound)
 			entity.setCouplingId(cart.getUUID());
 		entity.setPos(pos.getX() + .5, pos.getY(), pos.getZ() + .5);

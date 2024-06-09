@@ -1033,7 +1033,7 @@ public abstract class Contraption {
 				BlockPos targetPos = transform.apply(block.pos());
 				BlockState state = transform.apply(block.state());
 
-				if (customBlockPlacement(world, targetPos, state))
+				if (customBlockPlacement(world, targetPos, state))//чо нах там же всегда false
 					continue;
 
 				if (nonBrittles)
@@ -1050,7 +1050,7 @@ public abstract class Contraption {
 						targetPos = targetPos.above();
 					world.levelEvent(2001, targetPos, Block.getId(state));
 					Block.dropResources(state, world, targetPos, null);
-					continue;
+					continue;//это как я понял если разберется там где бедрок то выбрасывает все
 				}
 				if (state.getBlock() instanceof SimpleWaterloggedBlock
 					&& state.hasProperty(BlockStateProperties.WATERLOGGED)) {
@@ -1067,7 +1067,7 @@ public abstract class Contraption {
 						.setValue(SlidingDoorBlock.POWERED, false);
 				// Stop Sculk shriekers from getting "stuck" if moved mid-shriek.
 				if(state.is(Blocks.SCULK_SHRIEKER)){
-					state = Blocks.SCULK_SHRIEKER.defaultBlockState();
+					state = Blocks.SCULK_SHRIEKER.defaultBlockState();//устанавливает скалковый крикун в стандартное состояние 
 				}
 
 				world.setBlock(targetPos, state, Block.UPDATE_MOVE_BY_PISTON | Block.UPDATE_ALL);
