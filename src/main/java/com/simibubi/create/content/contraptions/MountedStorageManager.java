@@ -213,7 +213,7 @@ public class MountedStorageManager {
 		return fluidInventory;
 	}
 
-	public boolean handlePlayerStorageInteraction(Contraption contraption, Player player, BlockPos localPos) {
+	public boolean handlePlayerStorageInteraction(Contraption contraption, Player player, BlockPos localPos) {//это открытие сундука или бочки на штуковине
 		if (player.level().isClientSide()) {
 			BlockEntity localBE = contraption.presentBlockEntities.get(localPos);
 			return MountedStorage.canUseAsStorage(localBE);

@@ -244,7 +244,7 @@ public abstract class Contraption {
 		throw AssemblyException.structureTooLarge();
 	}
 
-	public void onEntityCreated(AbstractContraptionEntity entity) {
+	public void onEntityCreated(AbstractContraptionEntity entity) {//какие то подштуковины
 		this.entity = entity;
 
 		// Create subcontraptions
@@ -263,7 +263,7 @@ public abstract class Contraption {
 			OrientedContraptionEntity movedContraption = OrientedContraptionEntity.create(world, subContraption, face);
 			BlockPos anchor = blockFace.getConnectedPos();
 			movedContraption.setPos(anchor.getX() + .5f, anchor.getY(), anchor.getZ() + .5f);
-			world.addFreshEntity(movedContraption);
+			world.addFreshEntity(movedContraption);//создает сущность штуковины
 			stabilizedSubContraptions.put(movedContraption.getUUID(), new BlockFace(toLocalPos(pos), face));
 		}
 
@@ -1070,7 +1070,7 @@ public abstract class Contraption {
 					state = Blocks.SCULK_SHRIEKER.defaultBlockState();//устанавливает скалковый крикун в стандартное состояние 
 				}
 
-				world.setBlock(targetPos, state, Block.UPDATE_MOVE_BY_PISTON | Block.UPDATE_ALL);
+				world.setBlock(targetPos, state, Block.UPDATE_MOVE_BY_PISTON | Block.UPDATE_ALL);//добовляет блок штуковины в мир 
 
 				boolean verticalRotation = transform.rotationAxis == null || transform.rotationAxis.isHorizontal();
 				verticalRotation = verticalRotation && transform.rotation != Rotation.NONE;
@@ -1143,7 +1143,7 @@ public abstract class Contraption {
 				continue;
 			if (SeatBlock.isSeatOccupied(world, seatPos))
 				continue;
-			SeatBlock.sitDown(world, seatPos, seatedEntity);
+			SeatBlock.sitDown(world, seatPos, seatedEntity);//блок сиденье типо тех кто на сиденье 
 		}
 	}
 

@@ -86,7 +86,7 @@ public class OrientedContraptionEntity extends AbstractContraptionEntity {
 		nonDamageTicks = 10;
 	}
 
-	public static OrientedContraptionEntity create(Level world, Contraption contraption, Direction initialOrientation) {
+	public static OrientedContraptionEntity create(Level world, Contraption contraption, Direction initialOrientation) {//создает entity из штуковины
 		OrientedContraptionEntity entity =
 			new OrientedContraptionEntity(AllEntityTypes.ORIENTED_CONTRAPTION.get(), world);
 		entity.setContraption(contraption);
