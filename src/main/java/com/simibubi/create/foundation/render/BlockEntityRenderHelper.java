@@ -45,6 +45,8 @@ public class BlockEntityRenderHelper {
 			AnimationTickHolder.getPartialTicks());
 	}
 
+
+	//render блоков
 	public static void renderBlockEntities(Level world, @Nullable VirtualRenderWorld renderWorld,
 			Iterable<BlockEntity> customRenderBEs, PoseStack ms, @Nullable Matrix4f lightTransform, MultiBufferSource buffer,
 			float pt) {

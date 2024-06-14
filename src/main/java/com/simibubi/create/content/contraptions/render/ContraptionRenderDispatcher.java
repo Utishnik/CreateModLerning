@@ -136,7 +136,7 @@ public class ContraptionRenderDispatcher {
 		renderWorld.runLightEngine();
 		return renderWorld;
 	}
-
+//рендер штуковин
 	public static void renderBlockEntities(Level world, VirtualRenderWorld renderWorld, Contraption c,
 		ContraptionMatrices matrices, MultiBufferSource buffer) {
 		BlockEntityRenderHelper.renderBlockEntities(world, renderWorld, c.getSpecialRenderedBEs(),

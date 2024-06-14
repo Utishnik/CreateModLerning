@@ -66,7 +66,7 @@ public class CarriageContraption extends Contraption {
 	private int bogeys;
 	private boolean sidewaysControls;
 	private BlockPos secondBogeyPos;
-	private List<BlockPos> assembledBlazeBurners;
+	private List<BlockPos> assembledBlazeBurners;//asseble blocks
 
 	// render
 	public int portalCutoffMin;
@@ -96,7 +96,7 @@ public class CarriageContraption extends Contraption {
 	}
 
 	@Override
-	public boolean assemble(Level world, BlockPos pos) throws AssemblyException {
+	public boolean assemble(Level world, BlockPos pos) throws AssemblyException { //asseble train
 		if (!searchMovedStructure(world, pos, null))
 			return false;
 		if (blocks.size() <= 1)

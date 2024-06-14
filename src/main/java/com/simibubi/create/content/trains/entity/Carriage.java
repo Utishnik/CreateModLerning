@@ -125,7 +125,7 @@ public class Carriage {
 	}
 
 	public double travel(Level level, TrackGraph graph, double distance, TravellingPoint toFollowForward,
-		TravellingPoint toFollowBackward, int type) {
+		TravellingPoint toFollowBackward, int type) { //поезд едит типо вроде
 
 		Function<TravellingPoint, ITrackSelector> forwardControl =
 			toFollowForward == null ? train.navigation::control : mp -> mp.follow(toFollowForward);

@@ -540,7 +540,7 @@ public class CarriageContraptionEntity extends OrientedContraptionEntity {
 	int hudPacketCooldown = 0;
 
 	@Override
-	public boolean control(BlockPos controlsLocalPos, Collection<Integer> heldControls, Player player) {
+	public boolean control(BlockPos controlsLocalPos, Collection<Integer> /*хз шо но влияет на стрес и таргект спид*/heldControls, Player player) {
 		if (carriage == null)
 			return false;
 		if (carriage.train.derailed)
