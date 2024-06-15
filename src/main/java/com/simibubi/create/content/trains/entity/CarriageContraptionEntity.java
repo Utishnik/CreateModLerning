@@ -540,7 +540,7 @@ public class CarriageContraptionEntity extends OrientedContraptionEntity {
 	int hudPacketCooldown = 0;
 
 	@Override
-	public boolean control(BlockPos controlsLocalPos, Collection<Integer> /*хз шо но влияет на стрес и таргект спид*/heldControls, Player player) {
+	public boolean control(BlockPos controlsLocalPos, Collection<Integer> heldControls, Player player) { //контроль поезда
 		if (carriage == null)
 			return false;
 		if (carriage.train.derailed)
@@ -634,7 +634,7 @@ public class CarriageContraptionEntity extends OrientedContraptionEntity {
 				}
 			}
 
-			double directedSpeed = targetSpeed != 0 ? targetSpeed : carriage.train.speed;
+			double directedSpeed = targetSpeed != 0 ? targetSpeed : carriage.train.speed;//
 			GlobalStation lookAhead = nav.findNearestApproachable(
 				!carriage.train.doubleEnded || (directedSpeed != 0 ? directedSpeed > 0 : !inverted));
 

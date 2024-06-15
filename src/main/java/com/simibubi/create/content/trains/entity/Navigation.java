@@ -547,7 +547,7 @@ public class Navigation {
 		search(maxDistance, -1, forward, destinations, stationTest);
 	}
 
-	public void search(double maxDistance, double maxCost, boolean forward, ArrayList<GlobalStation> destinations, StationTest stationTest) {
+	public void search(double maxDistance, double maxCost, boolean forward, ArrayList<GlobalStation> destinations, StationTest stationTest) {//ПОИСК пути
 		TrackGraph graph = train.graph;
 		if (graph == null)
 			return;

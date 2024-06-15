@@ -32,7 +32,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class BezierConnection implements Iterable<BezierConnection.Segment> {
+public class BezierConnection implements Iterable<BezierConnection.Segment> { // хуяся в create безье кривые используются
 
 	public Couple<BlockPos> tePositions;
 	public Couple<Vec3> starts;

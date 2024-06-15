@@ -106,9 +106,9 @@ public class TrackPlacement {
 
 	public static PlacementInfo tryConnect(Level level, Player player, BlockPos pos2, BlockState state2,
 		ItemStack stack, boolean girder, boolean maximiseTurn) {
-		Vec3 lookVec = player.getLookAngle();
+		Vec3 lookVec = player.getLookAngle();//получает угол игрока(я щас вспомнил видео елемент х)
 		int lookAngle = (int) (22.5 + AngleHelper.deg(Mth.atan2(lookVec.z, lookVec.x)) % 360) / 8;
-		int maxLength = AllConfigs.server().trains.maxTrackPlacementLength.get();
+		int maxLength = AllConfigs.server().trains.maxTrackPlacementLength.get();//сколько максимум дороги за раз можно поставить
 
 		if (level.isClientSide && cached != null && pos2.equals(hoveringPos) && stack.equals(lastItem)
 			&& hoveringMaxed == maximiseTurn && lookAngle == hoveringAngle)
@@ -116,7 +116,7 @@ public class TrackPlacement {
 
 		PlacementInfo info = new PlacementInfo(TrackMaterial.fromItem(stack.getItem()));
 		hoveringMaxed = maximiseTurn;
-		hoveringAngle = lookAngle;
+		hoveringAngle = lookAngle;//сюда надо миксер чтобы сделать блок повората рельс для возможности полной автомотизации построение жел.дорог
 		hoveringPos = pos2;
 		lastItem = stack;
 		cached = info;
@@ -342,7 +342,7 @@ public class TrackPlacement {
 			if (turnSize < turnSizeToFitAscend)
 				return info.withMessage("too_steep");
 
-			// This is for standardising curve sizes
+			// This is for standardising curve sizes тут задаются позиции для двух я блять сам хз
 			if (!maximiseTurn) {
 				ex1 += (turnSize - turnSizeToFitAscend) / axis1.length();
 				ex2 += (turnSize - turnSizeToFitAscend) / axis2.length();
@@ -478,7 +478,7 @@ public class TrackPlacement {
 			info.requiredPavement += TrackPaver.paveCurve(level, info.curve, block, simulate, visited);
 	}
 
-	private static PlacementInfo placeTracks(Level level, PlacementInfo info, BlockState state1, BlockState state2,
+	private static PlacementInfo placeTracks(Level level, PlacementInfo info, BlockState state1, BlockState state2,//ставит рельсы между двумя позициями
 		BlockPos targetPos1, BlockPos targetPos2, boolean simulate) {
 		info.requiredTracks = 0;
 
