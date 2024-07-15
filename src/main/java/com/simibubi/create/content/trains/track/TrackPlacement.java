@@ -310,7 +310,7 @@ public class TrackPlacement {
 		// Turn
 
 		if (!parallel) {
-			float absAngle = Math.abs(AngleHelper.deg(angle));
+			float absAngle = Math.abs(AngleHelper.deg(angle));//угол в градусах из радиан
 			if (absAngle < 60 || absAngle > 300)
 				return info.withMessage("turn_90")
 					.tooJumbly();
@@ -501,7 +501,7 @@ public class TrackPlacement {
 				break;
 			}
 
-			for (int i = 0; i < (info.curve != null ? extent + 1 : extent); i++) {
+			for (int i = 0; i < (info.curve != null ? extent + 1 : extent); i++) {//устанавливает блоки сгенерированые через кривые безье
 				Vec3 offset = axis.scale(i);
 				BlockPos offsetPos = pos.offset(BlockPos.containing(offset));
 				BlockState stateAtPos = level.getBlockState(offsetPos);

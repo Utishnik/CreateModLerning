@@ -116,7 +116,7 @@ public class BeltSlicer {
 				controllerBE.inventory = null;
 				segmentBE.inventory = null;
 				segmentBE.setController(next);
-				for (TransportedItemStack transportedItemStack : inventory.getTransportedItems()) {
+				for (TransportedItemStack transportedItemStack : inventory.getTransportedItems()) {//перемещает предметы на ремне 
 					transportedItemStack.beltPosition -= 1;
 					if (transportedItemStack.beltPosition <= 0) {
 						ItemEntity entity = new ItemEntity(world, pos.getX() + .5f, pos.getY() + 11 / 16f,
