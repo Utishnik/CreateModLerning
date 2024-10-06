@@ -101,7 +101,7 @@ public class AllPortalTracks {
 		BlockState portalState = level.getBlockState(portalPos);
 		ITeleporter teleporter = customPortalForcer.apply(otherLevel);
 
-		SuperGlueEntity probe = new SuperGlueEntity(level, new AABB(portalPos));
+		SuperGlueEntity probe = new SuperGlueEntity(level, new AABB(portalPos));//создание етнити супер клея странна фигня какая то
 		probe.setYRot(inboundTrack.getFace()
 			.toYRot());
 		probe.setPortalEntrancePos();

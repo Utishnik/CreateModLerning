@@ -1,5 +1,7 @@
 package com.simibubi.create.content.trains.bogey;
 
+import java.util.Properties;
+
 import com.simibubi.create.AllBlockEntityTypes;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllBogeyStyles;
@@ -16,6 +18,8 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+
+//bogey это херня на которой поезд стоит а вот кста отдон один https://github.com/WeidosOddities/Extended-Bogeys-Borked/blob/1.20.1/multiloader/dev/common/src/main/java/com/rabbitminers/extendedbogeys/bogeys/common/CommonBogeyFunctionality.java
 
 public class StandardBogeyBlock extends AbstractBogeyBlock<StandardBogeyBlockEntity>
 	implements IBE<StandardBogeyBlockEntity>, ProperWaterloggedBlock, ISpecialBlockItemRequirement {

@@ -33,7 +33,7 @@ public class CurvedTrackInteraction {
 	static float breakProgress;
 	static BlockPos breakPos;
 
-	public static void clientTick() {
+	public static void clientTick() {//ломка дороги
 		BezierPointSelection result = TrackBlockOutline.result;
 		Minecraft mc = Minecraft.getInstance();
 		LocalPlayer player = mc.player;

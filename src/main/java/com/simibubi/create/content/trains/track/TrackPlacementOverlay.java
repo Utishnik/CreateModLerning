@@ -31,7 +31,7 @@ public class TrackPlacementOverlay implements IGuiOverlay {
 		if (TrackPlacement.extraTipWarmup < 4)
 			return;
 
-		if (ObfuscationReflectionHelper.getPrivateValue(Gui.class, gui,
+		if (ObfuscationReflectionHelper.getPrivateValue(Gui.class, gui,//чо то интеремное обфускация тут всякая что то с минюшкой
 			"f_92993_") instanceof Integer toolHighlightTimer && toolHighlightTimer > 0)
 			return;
 	
